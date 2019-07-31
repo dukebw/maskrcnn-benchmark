@@ -7,9 +7,13 @@ import os
 class DatasetCatalog(object):
     DATA_DIR = "datasets"
     DATASETS = {
-        "hands": {
+        "hof": {
             "img_dir": "/scratch/ssd/bduke/hand_over_face/images_original_size",
             "ann_file": "/scratch/ssd/bduke/hand_over_face/hof.json",
+        },
+        "egohands": {
+            "img_dir": "/scratch/ssd/bduke/egohands_flat",
+            "ann_file": "/scratch/ssd/bduke/egohands_flat/egohands.json",
         },
         "coco_2017_train": {
             "img_dir": "coco/train2017",
@@ -112,7 +116,7 @@ class DatasetCatalog(object):
 
     @staticmethod
     def get(name):
-        if ("coco" in name) or (name == "hands"):
+        if ("coco" in name) or (name in ["egohands", "hof"]):
             data_dir = DatasetCatalog.DATA_DIR
             attrs = DatasetCatalog.DATASETS[name]
             args = dict(
