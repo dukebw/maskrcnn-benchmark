@@ -12,8 +12,8 @@ class DatasetCatalog(object):
             "ann_file": "/scratch/ssd/bduke/hand_over_face/hof.json",
         },
         "egohands": {
-            "img_dir": "/scratch/ssd/bduke/egohands_flat",
-            "ann_file": "/scratch/ssd/bduke/egohands_flat/egohands.json",
+            "img_dir": "/scratch/ssd/bduke/egohands/_LABELLED_SAMPLES",
+            "ann_file": "/scratch/ssd/bduke/egohands/egohands.json",
         },
         "eyth": {
             "img_dir": "/scratch/ssd/bduke/eyth_dataset/high-res",
