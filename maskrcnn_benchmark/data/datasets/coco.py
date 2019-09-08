@@ -59,12 +59,9 @@ class COCODataset(torchvision.datasets.coco.CocoDetection):
         self.json_category_id_to_contiguous_id = {
             v: i + 1 for i, v in enumerate(self.coco.getCatIds())
         }
-        ignore_index = -100
-        self.json_category_id_to_contiguous_id[ignore_index] = ignore_index
         self.contiguous_category_id_to_json_id = {
             v: k for k, v in self.json_category_id_to_contiguous_id.items()
         }
-        self.contiguous_category_id_to_json_id[ignore_index] = ignore_index
         self.id_to_img_map = {k: v for k, v in enumerate(self.ids)}
         self._transforms = transforms
 

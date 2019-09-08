@@ -19,6 +19,10 @@ class DatasetCatalog(object):
             "img_dir": "/scratch/ssd/bduke/eyth_dataset/high-res",
             "ann_file": "/scratch/ssd/bduke/eyth_dataset/eyth.json",
         },
+        "epic_handbox": {
+            "img_dir": "/scratch/ssd/bduke/epic-kitchens-handbox",
+            "ann_file": "/scratch/ssd/bduke/epic-kitchens-handbox/epic_handbox.json",
+        },
         "coco_2017_train": {
             "img_dir": "coco/train2017",
             "ann_file": "coco/annotations/instances_train2017.json"
@@ -120,7 +124,7 @@ class DatasetCatalog(object):
 
     @staticmethod
     def get(name):
-        if ("coco" in name) or (name in ["egohands", "eyth", "hof"]):
+        if ("coco" in name) or (name in ["egohands", "eyth", "hof", "epic_handbox"]):
             data_dir = DatasetCatalog.DATA_DIR
             attrs = DatasetCatalog.DATASETS[name]
             args = dict(

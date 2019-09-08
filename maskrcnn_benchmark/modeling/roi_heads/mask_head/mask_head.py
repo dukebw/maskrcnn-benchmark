@@ -23,7 +23,6 @@ def keep_only_positive_boxes(boxes):
     assert boxes[0].has_field("labels")
     positive_boxes = []
     positive_inds = []
-    num_boxes = 0
     for boxes_per_image in boxes:
         labels = boxes_per_image.get_field("labels")
         inds_mask = labels > 0
