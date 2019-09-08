@@ -161,6 +161,14 @@ class BoxList(object):
         for k, v in self.extra_fields.items():
             if not isinstance(v, torch.Tensor):
                 v = v.transpose(method)
+            if k == 'labels':
+                for i, lbl in enumerate(v):
+                    if lbl == 1:
+                        v[i] = 2
+                    elif lbl == 2:
+                        v[i] = 1
+                    else:
+                        assert False
             bbox.add_field(k, v)
         return bbox.convert(self.mode)
 
